@@ -31,7 +31,7 @@ def index():
 def login():
   username=request.form.get('username')
   password=request.form.get('pass')
-  if db.execute("SELECT * FROM users WHERE email = :username AND password = :password", {"username":username,"password":password}).rowcount == 0:
+  if db.execute("SELECT * FROM users WHERE email = :username AND password = :password", {"username":username,"password":password}).rowcount == 1:
     return render_template("search.html")
 
   else :
