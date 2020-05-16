@@ -119,7 +119,7 @@ def insert(book_id):
 
 
 @app.route("/api/<string:isbn>")
-def flight_api(isbn):
+def books_api(isbn):
     
     apires = db.execute("SELECT * FROM BOOKS WHERE isbn=:isbn", {"isbn":isbn}).fetchone()
     if apires is None:
