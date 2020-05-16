@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     book : {{desc.title}}
+{% endblock %}
+
+{% block body %}
+<div class="container" style="padding-top: 100px">
+	<div class="row justify-content-center">
+   	 	<div class="col-10">
+      	 	<ol>
+      		<li>  isbn  :	{{desc.isbn}}	</li>
+      		<li> title  :	{{desc.title}}	</li>
+      		<li>author  :	{{desc.author}} </li>
+      		<li> year   :	{{desc.year}}	</li>
+      		<li>Goodread's avg rating	: {{rate}}						</li>
+      		<li>Goodread's rating count :	{{count}}						</li>
+      		<li>reviews  :	
+      			<ul>
+      					{% for row in reviews %}
+    		    			<li> {{ row }} </li>
+      					{% endfor %}
+      			</ul>
+      		</li>
+       		</ol>
+    	</div>
+ 	</div>
+	<div class="row justify-content-center" style="padding-left: 27px;padding-top: 15px">
+		<div class="col-10">
+			<form action="{{ url_for('insert',book_id=desc.id)}}" method="POST">
+				<textarea name="name" rows="5" cols="70">
+enter your review here...
+				</textarea>
+				<div>
+					<div class="row">
+						 <div class="col-2">
+							<input type="radio" id="r1" name="val" value="1">
+								<label for="r1">rating : 1</label><br>
+						 </div>
+						 <div class="col-2">
+							<input type="radio" id="r2" name="val" value="2">
+								<label for="r2">rating : 2</label><br>
+						 </div>
+						 <div class="col-2">
+							<input type="radio" id="r3" name="val" value="3">
+								<label for="r3">rating : 3</label><br>
+						 </div>
+						 <div class="col-2">
+							<input type="radio" id="r4" name="val" value="4">
+								<label for="r4">rating : 4</label><br>
+						 </div>
+						 <div class="col-2">
+							<input type="radio" id="r5" name="val" value="5">
+								<label for="r5">rating : 5</label><br>
+						 </div>
+
+					</div>
+				</div>	
+				<div>
+					<button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Submit review</button>
+				</div>
+			</form>
+		</div>
+    </div>
+
+
+
+
+{% endblock %}

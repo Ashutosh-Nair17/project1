@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> SEARCH </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<body>
+		<h1 align="center" style="padding-top: 100px;padding-bottom: 50px">Search amongst 5000  of your favourite Books </h1>
+			<div class="container" align="center">
+				<form action="{{url_for('search')}}" method="POST" class="form-inline md-form mr-auto mb-4" style="padding-left: 400px">
+					<div class="row">
+	 						<div class="col-lg-12col-sm-6" >
+			  					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
+			  					<div class="form-check" style="padding-top:15px">
+			  						<input class="form-check-input" type="checkbox" name="isbn" id="defaultCheck1">
+			  						<label class="form-check-label" for="defaultCheck1">
+			    						search by isbn
+			  						</label>
+								</div>
+								<div class="form-check" style="padding-top: 5px">
+			  						<input class="form-check-input" type="checkbox" name="title" id="defaultCheck1">
+			  						<label class="form-check-label" for="defaultCheck1">
+			    								search by title
+			  						</label>
+								</div>
+								<div class="form-check" style="padding-top: 5px">
+			  						<input class="form-check-input" type="checkbox" name="author" id="defaultCheck1">
+			  						<label class="form-check-label" for="defaultCheck1">
+			    						search by author
+			  						</label>
+								</div>
+								<div style="padding-top: 50px">
+						     	<button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+						     </div>
+						 </div>
+			  		</div>
+
+				</form>
+			</div>
+	</body>
+</html>
